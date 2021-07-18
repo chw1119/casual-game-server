@@ -1,0 +1,5 @@
+const Camera = class{
+    construction(){
+
+    }
+}

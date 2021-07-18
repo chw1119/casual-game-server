@@ -18,17 +18,20 @@
 
         }
 
-        const circleArr = new Sprite(new Circle(300, 45), 100, 100, 0, "green");
+        const circleArr = new Sprite(new Circle(10, 40), 100, 100, 0, "green");
 
         const now = Date.now();
 
         setInterval(function(){
 
-            bufferCtx.clearRect(0,0,screen.clientWidth,screen.clientHeight)
+            screenCtx.clearRect(0,0,screen.clientWidth,screen.clientHeight)
+
             circleArr.setAngle(circleArr.getAngle() + 10)
+
             circleArr.setX(circleArr.getX() + 0.1);
-            circleArr.draw(bufferCtx);
-            screenCtx.drawImage(bufferScreen,0,0);
+
+            circleArr.draw(screenCtx);
+            
 
         },1000 / 60)
     
