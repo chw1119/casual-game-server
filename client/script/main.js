@@ -18,7 +18,9 @@
 
         }
 
-        const circleArr = new Sprite(new Circle(10, 40), 100, 100, 0, "green");
+        const cam = new Camera(0, 0, screenCtx);
+
+        const circleArr = new Sprite(new Circle(10, 40), 0, 0, 0, "green");
 
         const now = Date.now();
 
@@ -30,7 +32,11 @@
 
             circleArr.setX(circleArr.getX() + 0.1);
 
+            cam.viewContents(0,0);
+
             circleArr.draw(screenCtx);
+
+            cam.unBind();
             
 
         },1000 / 60)
